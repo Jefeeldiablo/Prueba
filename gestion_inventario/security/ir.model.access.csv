@@ -1,0 +1,4 @@
+# gestion_inventario/security/ir.model.access.csv
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gestion_inventario_productos,gestion_inventario.producto,model_gestion_inventario_producto,base.group_user,1,1,1,1
+access_gestion_inventario_movimientos,gestion_inventario.movimiento_inventario,model_gestion_inventario_movimiento_inventario,base.group_user,1,1,1,1

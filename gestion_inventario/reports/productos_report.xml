@@ -1,0 +1,13 @@
+<!-- gestion_inventario/reports/productos_report.xml -->
+<odoo>
+    <data>
+        <report
+            id="report_productos_list"
+            string="Productos"
+            model="gestion_inventario.producto"
+            report_type="qweb-pdf"
+            name="gestion_inventario.producto_report"
+            file="gestion_inventario.producto_report"
+        />
+    </data>
+</odoo>

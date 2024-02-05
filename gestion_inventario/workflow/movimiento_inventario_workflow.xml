@@ -1,0 +1,38 @@
+<!-- gestion_inventario/workflow/movimiento_inventario_workflow.xml -->
+<odoo>
+    <data>
+        <!-- Workflow para Movimientos de Inventario -->
+        <record model="workflow" id="workflow_movimiento_inventario">
+            <field name="name">movimiento.inventario</field>
+            <field name="model_id" ref="model_gestion_inventario_movimiento_inventario"/>
+            <field name="on_create">True</field>
+        </record>
+
+        <!-- Estados del Workflow -->
+        <record model="workflow.activity" id="activity_draft">
+            <field name="name">borrador</field>
+            <field name="kind">function</field>
+            <field name="action">action_draft</field>
+        </record>
+        <record model="workflow.activity" id="activity_confirm">
+            <field name="name">confirmado</field>
+            <field name="kind">function</field>
+            <field name="action">action_confirm</field>
+        </record>
+        <record model="workflow.activity" id="activity_done">
+            <field name="name">completado</field>
+            <field name="kind">function</field>
+            <field name="action">action_done</field>
+        </record>
+
+        <!-- Transiciones del Workflow -->
+        <record model="workflow.transition" id="transition_draft_confirm">
+            <field name="act_from" ref="activity_draft"/>
+            <field name="act_to" ref="activity_confirm"/>
+        </record>
+        <record model="workflow.transition" id="transition_confirm_done">
+            <field name="act_from" ref="activity_confirm"/>
+            <field name="act_to" ref="activity_done"/>
+        </record>
+    </data>
+</odoo>
